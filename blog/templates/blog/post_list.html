@@ -1,21 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     <meta charset="UTF-8">
     <title>Its my blog!</title>
 
-    <style>
-        div#divpost{
-            border: 4px double black; /* Параметры границы */
-            background: #fc3; /* Цвет фона */
-            padding: 10px; /* Поля вокруг текста */
-        }
-
-    </style>
 </head>
 <body>
         <div>
-            <h1><a href="/">Blog href</a></h1>
+            <h1><a href="/">My fucking blog</a></h1>
         </div>
         {% for post in posts %}
     <div id=divpost>
@@ -23,6 +19,7 @@
         <h1><a href="">{{ post.title }}</a></h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
-        {%endfor%}
+    <hr>
+        {% endfor %}
 </body>
 </html>
