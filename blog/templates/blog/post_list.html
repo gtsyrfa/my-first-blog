@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Its my blog!</title>
+
+    <style>
+        div#divpost{
+            border: 4px double black; /* Параметры границы */
+            background: #fc3; /* Цвет фона */
+            padding: 10px; /* Поля вокруг текста */
+        }
+
+    </style>
+</head>
+<body>
+        <div>
+            <h1><a href="/">Blog href</a></h1>
+        </div>
+        {% for post in posts %}
+    <div id=divpost>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+        {%endfor%}
+</body>
+</html>
